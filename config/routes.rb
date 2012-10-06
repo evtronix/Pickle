@@ -16,9 +16,9 @@ Pickle::Application.routes.draw do
 
   post '/users/:user_id/picks', to: 'picks#create', as: 'create_user_pick'
 
+  match '/standings', to: 'static_pages#standings'
 
-
-  root :to => 'games#new'
+  root :to => 'static_pages#standings'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
