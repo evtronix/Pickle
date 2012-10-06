@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  week: 1
+  favorite: MyString
+  underdog: MyString
+  line: 1
+
+two:
+  week: 1
+  favorite: MyString
+  underdog: MyString
+  line: 1

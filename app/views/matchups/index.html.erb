@@ -1,0 +1,18 @@
+<table>
+	<tr>
+		<th>Week</th>
+		<th>Favorite</th>
+		<th>Line</th>
+		<th>Dog</th>
+	</tr>
+	<% @matchups.each do |matchup| %>
+	<tr>
+		<td><%= matchup.week %></td>
+		<td><%= Game.find_by_team(matchup.favorite).id %><td>
+		<td><%= matchup.favorite %></td>
+		<td><%= matchup.line %></td>
+		<td><%= matchup.underdog %></td>
+		<td><%= Game.find_by_team(matchup.underdog).id %><td>
+	</tr>
+</table>
+	<% end %>

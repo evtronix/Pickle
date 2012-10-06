@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  week: 1
+  team: MyString
+  line: 1
+  result: false
+
+two:
+  week: 1
+  team: MyString
+  line: 1
+  result: false
