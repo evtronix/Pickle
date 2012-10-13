@@ -12,6 +12,8 @@ Pickle::Application.routes.draw do
     resources :picks
   end
 
+  match '/users/:id/edit/clear/:week_id', to: 'users#clear', as: 'clear_week_picks'
+
   resources :games
 
   post '/users/:user_id/picks', to: 'picks#create', as: 'create_user_pick'

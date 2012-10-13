@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	before_filter :authenticate_user!
 
 def edit
 	@user = User.find(params[:id])
@@ -21,6 +22,12 @@ def update
 end
 
 def show
+end
+
+def clear
+	@currentgames = current_user.games
+	current_user.update_attribute('games', @currentgames.where('week != ?', params[:week_id]))
+	redirect_to edit_user_path(current_user)
 end
 
 

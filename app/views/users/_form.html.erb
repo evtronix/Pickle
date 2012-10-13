@@ -20,5 +20,5 @@
 		<% end %>
 	</table>
 <%= f.submit %>
-<%= link_to "Clear picks", clear_week_picks(week) %>
+<%= link_to "Clear picks", clear_week_picks_path(current_user.id, week_id) %>
 <% end %>

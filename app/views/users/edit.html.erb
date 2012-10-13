@@ -5,10 +5,10 @@
   </ul>
   <div class="tab-content">
     <div class="tab-pane active" id="tab1">
-      <p><%= render 'form', games: Game.where(week: 2), week: 2 %></p>
+      <p><%= render 'form', games: Game.where(week: 2), week_id: 2 %></p>
     </div>
     <div class="tab-pane" id="tab2">
-      <p><%= render 'form', games: Game.where(week: 3), week: 3 %></p>
+      <p><%= render 'form', games: Game.where(week: 3), week_id: 3 %></p>
     </div>
   </div>
 </div>
