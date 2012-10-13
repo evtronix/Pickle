@@ -8,12 +8,15 @@ end
 
 def update
 	@user = User.find(params[:id])
+	@currentpicks = @user.game_ids
+	@idarray = "user[game_ids][]"
 
-	if @user.update_attributes(params[:user])
-		redirect_to @user, notice: "Yay!"
-	else
-		redirect_to edit_user_path(@user), notice: "Nooo!"
-	end
+	@user.update_attribute('game_ids', params[:user][:game_ids] + @currentpicks)
+	#if @user.update_attribute(:game_ids => params[:user][:game_ids] + @currentpicks)
+		#redirect_to @user, notice: "Yay!"
+	#else
+		#redirect_to edit_user_path(@user), notice: "Nooo!"
+	#end
 
 end
 

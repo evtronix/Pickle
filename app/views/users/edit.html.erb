@@ -1,22 +1,15 @@
-<%= form_for(@user) do |f| %>
-	<table class="table">
-		<tr>
-			<th>Week</th>
-			<th>Favorite</th>
-			<th>Line</th>
-			<th>Dog</th>
-		</tr>
-		<% @games.each_with_index do |g, index| %>
-			<% if (index %2 == 0) %>
-				<tr>
-				<td><%= g.week %></td>
-				<td><%= check_box_tag "user[game_ids][]", g.id %><%= g.team %></td>
-				<td><%= g.line %></td>
-			<% else %>
-				<td><%= g.team %></td>
-				</tr>
-			<% end %>
-		<% end %>
-	</table>
-<%= f.submit %>
-<% end %>
+<div class="tabbable">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">Week 2</a></li>
+    <li><a href="#tab2" data-toggle="tab">Week 3</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+      <p><%= render 'form', games: Game.where(week: 2), week: 2 %></p>
+    </div>
+    <div class="tab-pane" id="tab2">
+      <p><%= render 'form', games: Game.where(week: 3), week: 3 %></p>
+    </div>
+  </div>
+</div>
+
