@@ -11,4 +11,12 @@ class User < ActiveRecord::Base
 
   has_many :picks
   has_many :games, through: :picks
+
+  def correct_games
+    self.games.where(result: "W").count 
+  end
+
+  def total_games
+    self.games.where('result != ?', "P").count 
+  end
 end
