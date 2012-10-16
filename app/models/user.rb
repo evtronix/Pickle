@@ -20,7 +20,12 @@ class User < ActiveRecord::Base
     self.games.where('result != ?', "P").count 
   end
 
-  def score
+  def percentage_correct
+    ((self.correct_games / self.total_games) * 100).to_i
+  end
+
+  def self.sorted_by_percentage_correct
+    User.all.sort_by(&:percentage_correct).reverse
   end
 
   def self.from_omniauth(auth)

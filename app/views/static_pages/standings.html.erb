@@ -1,4 +1,19 @@
+Standings:
+<br />
+<table class="table">
+	<tr>
+		<th> Rank </th>
+		<th> Email </th>
+		<th> Win % </th>
+	</tr>
+	<% rank = 0 %>
+<% User.sorted_by_percentage_correct.each do |u| %>
+	<% rank += 1 %>
+	<tr>
+		<td> <%= rank %> </td>
+		<td> <%= u.email %> </td>
+		<td> <%= u.percentage_correct %> </td>
+<% end %>
+</table>
 
-
-<%= number_to_percentage(current_user.correct_games.to_f / current_user.total_games) %>
 
