@@ -16,9 +16,9 @@ devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
 
   post '/users/:user_id/picks', to: 'picks#create', as: 'create_user_pick'
 
-  match '/standings', to: 'static_pages#standings'
+  match '/standings', to: 'static_pages#home'
 
-  root :to => 'static_pages#standings'
+  root :to => 'static_pages#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

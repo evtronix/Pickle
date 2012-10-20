@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121014152301) do
+ActiveRecord::Schema.define(:version => 20121016235512) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -53,15 +53,6 @@ ActiveRecord::Schema.define(:version => 20121014152301) do
     t.string   "result"
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
-  end
-
-  create_table "matchups", :force => true do |t|
-    t.integer  "week"
-    t.string   "favorite"
-    t.string   "underdog"
-    t.integer  "line"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "picks", :force => true do |t|

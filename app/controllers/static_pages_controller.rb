@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
 
-def standings
+def home
 end
 
 end

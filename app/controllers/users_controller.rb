@@ -12,16 +12,19 @@ def update
 	@currentpicks = @user.game_ids
 	@idarray = "user[game_ids][]"
 
-	@user.update_attribute('game_ids', params[:user][:game_ids] + @currentpicks)
-	#if @user.update_attribute(:game_ids => params[:user][:game_ids] + @currentpicks)
-		#redirect_to @user, notice: "Yay!"
-	#else
-		#redirect_to edit_user_path(@user), notice: "Nooo!"
-	#end
+	#@user.update_attribute(:game_ids => params[:user][:game_ids] + @currentpicks)
+	if @user.update_attribute('game_ids', params[:user][:game_ids] + @currentpicks)
+		flash[:success] = "Picks submitted. Good luck."
+		redirect_to @user 
+	else
+		flash[:error] = "Oops! Try again!"
+		redirect_to edit_user_path(@user) 
+	end
 
 end
 
 def show
+	@user = User.find(params[:id])
 end
 
 def clear
