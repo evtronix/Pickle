@@ -19,6 +19,6 @@
 			<% end %>
 		<% end %>
 	</table>
-<%= f.submit %>
-<%= link_to "Clear picks", clear_week_picks_path(current_user.id, week_id) %>
+<%= f.submit "Submit Picks", class: "btn btn-success" %>
+<%= link_to "Clear picks", clear_week_picks_path(current_user.id, week_id), class: "btn btn-warning" %>
 <% end %>
