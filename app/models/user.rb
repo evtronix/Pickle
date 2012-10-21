@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   end
 
   def percentage_correct
-    ((self.correct_games / self.total_games) * 100).to_i
+    ((self.correct_games.to_f / self.total_games) * 100).to_i
   end
 
   def self.sorted_by_percentage_correct

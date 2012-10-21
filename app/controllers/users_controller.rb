@@ -25,6 +25,7 @@ end
 
 def show
 	@user = User.find(params[:id])
+	@recentpicks = @user.games.find(:all, :limit => 7, :order => 'created_at DESC')
 end
 
 def clear
